@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Front-End Web Development</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Custom Keyframe Animation for a shifting gradient background */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Custom utility class combining standard CSS features */
+        .animated-gradient-text {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        /* Custom Hover Effect Transition override */
+        .custom-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .custom-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            border-color: #6366f1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen font-sans">
+
+    <header class="bg-indigo-600 text-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <h1 class="text-xl font-bold tracking-wide">WebDev Essentials</h1>
+            <nav>
+                <ul class="flex space-x-6 text-sm font-medium">
+                    <li><a href="#" class="hover:text-indigo-200 transition-colors">Home</a></li>
+                    <li><a href="#" class="hover:text-indigo-200 transition-colors">About</a></li>
+                    <li><a href="#" class="hover:text-indigo-200 transition-colors">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12 flex-grow max-w-4xl">
+        <section class="custom-card bg-white p-6 sm:p-10 rounded-2xl shadow-sm border border-gray-100">
+            
+            <h2 class="animated-gradient-text text-3xl sm:text-5xl font-extrabold mb-6 pb-2">
+                Modern Front-End Web Development
+            </h2>
+            
+            <p class="text-base sm:text-lg text-gray-600 leading-relaxed mb-6">
+                Modern front-end web development focuses on building fast, interactive, and beautifully responsive user interfaces. Gone are the days of static layouts built for fixed desktop screens. Today, developers build with a <strong>mobile-first mindset</strong>, ensuring web applications look and perform flawlessly across devices ranging from tiny smartphones to massive ultra-wide monitors.
+            </p>
+
+            <p class="text-base sm:text-lg text-gray-600 leading-relaxed mb-8">
+                By leveraging powerful layout tools like CSS Grid and Flexbox—often packaged inside modern utility-first frameworks like Tailwind CSS—developers can rapidly prototype and scale components. Coupled with strict version control workflows using Git, teams can seamlessly collaborate, safely test features on isolated branches, and continuously deliver smooth user experiences.
+            </p>
+
+            <div class="flex flex-wrap gap-3">
+                <span class="bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">Mobile-First</span>
+                <span class="bg-purple-50 text-purple-700 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">Tailwind CSS</span>
+                <span class="bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">Git Workflow</span>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 text-sm py-6 border-t border-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2026 WebDev Assignment. Built with Passion, Tailwind, and Custom CSS.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
